@@ -24,12 +24,16 @@ export default function Home() {
           }
 
           }>
-          {({ values, errors }) => (
+          {({ values, errors, isValid, isSubmitting }) => (
             <Form>
               <Grid container spacing={2} direction="column">
                 <MultipleFileUploadField name="files" />
                 <Grid item>
-                  <Button type="submit">Submit </Button>
+                  <Button
+                    variant="contained" 
+                    color="primary"
+                    type="submit"
+                    disabled={!isValid || isSubmitting}>Submit </Button>
                 </Grid>
               </Grid>
 

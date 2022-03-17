@@ -24,7 +24,9 @@ export const UploadError = ({file, onDelete, errors}: UploadErrorProps)  => {
             <FileHeader file={file} onDelete={onDelete} />
             <ErrorLinearProgress variant="determinate" value={100} />
             {errors.map(error => (
-                <Typography color="error" ><div>{error.message} {error.code}</div></Typography>
+                <div key={error.code}>
+                    <Typography color="error" >{error.message} {error.code}</Typography>
+                </div>
             ))}
         </React.Fragment>
     )

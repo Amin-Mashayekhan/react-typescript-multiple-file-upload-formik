@@ -6,11 +6,15 @@ export interface FileHeaderProps {
 }
 
 
-export const FileHeader = ({ file }: FileHeaderProps) => {
+export const FileHeader = ({ file, onDelete }: FileHeaderProps) => {
     return (
-        <Grid container justifyContent='space-between' alignItems='center'>
+        <Grid container justify="space-between" alignItems='center'>
             <Grid item> {file.name}</Grid>
-            <Grid item> <Button size="small">Delete</Button></Grid>
+            <Grid item> 
+                <Button size="small" onClick={() => onDelete(file)}>
+                    Delete
+                </Button>
+            </Grid>
         </Grid>
     )
 }

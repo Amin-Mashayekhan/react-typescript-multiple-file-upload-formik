@@ -25,6 +25,8 @@ export const SingleFileUploadWithProgress = ({ file, onDelete, onUpload }: Singl
     const uploadFile = (file: File, onProgress: (percentage: number) => void) => {
         const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
         const key = 'docs_upload_example_us_preset';
+
+        
         return new Promise<string>((res, rej) => {
             const xhr = new XMLHttpRequest();
             xhr.open('POST', url);
@@ -48,6 +50,8 @@ export const SingleFileUploadWithProgress = ({ file, onDelete, onUpload }: Singl
             xhr.send(formData);
         });
     }
+
+    
     return (
         <Grid item>
             <FileHeader file={file} onDelete={() => { onDelete }} />
