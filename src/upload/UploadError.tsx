@@ -1,4 +1,4 @@
-import { LinearProgress, Typography, createStyles, withStyles } from "@material-ui/core";
+import { LinearProgress, Typography, createStyles, withStyles } from '@material-ui/core';
 
 import { FileError } from 'react-dropzone';
 import { FileHeader } from "./FileHeader"
@@ -25,7 +25,8 @@ export const UploadError = ({file, onDelete, errors}: UploadErrorProps)  => {
             <ErrorLinearProgress variant="determinate" value={100} />
             {errors.map(error => (
                 <div key={error.code}>
-                    <Typography color="error" >{error.message} {error.code}</Typography>
+                    <Typography color="error" >{error.message}</Typography>
+                    {/* {error.code} */}
                 </div>
             ))}
         </React.Fragment>

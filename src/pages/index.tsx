@@ -21,16 +21,15 @@ export default function Home() {
           onSubmit={(values) => {
             console.log("🚀 ~ file: index.tsx ~ line 14 ~ Home ~ values", values)
             return new Promise((res) => setTimeout(res, 2000))
-          }
-
-          }>
+          }}
+          >
           {({ values, errors, isValid, isSubmitting }) => (
             <Form>
               <Grid container spacing={2} direction="column">
                 <MultipleFileUploadField name="files" />
                 <Grid item>
                   <Button
-                    variant="contained" 
+                    variant="contained"
                     color="primary"
                     type="submit"
                     disabled={!isValid || isSubmitting}>Submit </Button>
